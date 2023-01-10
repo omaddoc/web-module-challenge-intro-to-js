@@ -191,6 +191,14 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 */
 
 const computerChoice = Math.floor(Math.random() * 3); // generates 0,1,2
+let aiChoice = '';
+if (computerChoice === 0) {
+  aiChoice = 'rock';
+} else if (computerChoice === 1) {
+  aiChoice = 'paper';
+} else if (computerChoice === 2) {
+  aiChoice = 'scissors';
+}
 
 function game(user, computer) {
   /*add your code here*/
@@ -217,7 +225,7 @@ function game(user, computer) {
     return 'you lose!';
   }
 }
-game('rock', 'scissors');
+game('rock', aiChoice);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
