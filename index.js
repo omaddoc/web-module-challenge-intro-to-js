@@ -79,9 +79,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/) {
+function dogYears(/*add your code here*/ age) {
   /*add your code here*/
+  return age * 7;
 }
+console.log(dogYears(45));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -129,10 +131,43 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */
 
-function hungryDog(/*add your code here*/) {
+function hungryDog(/*add your code here*/ weight, age) {
   /*add your code here*/
-}
+  let foodAmount;
+  // Feeding Requirements:
 
+  //    Puppies less than 1 year
+  //      2 - 4 months 10% of their body weight
+  //      4 - 7 months 5% of their body weight
+  //      7 - 12 months 4% of their body weight
+  if (age >= 0.16 && age < 0.33) {
+    foodAmount = weight * 0.1;
+  } else if (age > 0.33 && age < 0.58) {
+    foodAmount = weight * 0.05;
+  } else if (age > 0.58 && age < 1) {
+    foodAmount = weight * 0.04;
+  }
+
+  //    Adult Dogs 1 year and older
+  //      up to 5 lbs - 5% of their body weight
+  //      6 - 10 lbs - 4% of their body weight
+  //      11 - 15 lbs - 3% of their body weight
+  //      > 15lbs - 2% of their body weight
+  if (age >= 1) {
+    if (weight <= 5) {
+      foodAmount = weight * 0.05;
+    } else if (weight >= 6 && weight <= 10) {
+      foodAmount = weight * 0.04;
+    } else if (weight >= 11 && weight < 15) {
+      foodAmount = weight * 0.03;
+    } else if (weight >= 15) {
+      foodAmount = weight * 0.02;
+    }
+  }
+
+  return foodAmount;
+}
+hungryDog(5, 1);
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Rock, Paper, Scissors - Let's play against the computer!
